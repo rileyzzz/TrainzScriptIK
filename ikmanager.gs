@@ -49,12 +49,15 @@ class IKManager isclass Library
     Target.x = TargetX;
     Target.y = TargetY;
     Target.z = TargetZ;
+
+    //rotate link 0 towards Target
+    Links[0].r_z = IKMath.ApproxAtan2(-Target.y - 0.078508, Target.x) - (Math.PI / 2);
+
     //several iterations
     int i;
     for(i = 0; i < 5; i++)
     {
       Links[0].UpdateIK(Target);
     }
-
   }
 };
