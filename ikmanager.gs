@@ -1,7 +1,8 @@
 include "IKLink.gs"
+include "Library.gs"
 include "Soup.gs"
 
-class IKManager
+class IKManager isclass Library
 {
   IKLink[] Links;
   public MeshObject MainObject;
@@ -28,6 +29,18 @@ class IKManager
       Links[i].child = Links[i + 1];
       Links[i + 1].parent = Links[i];
     }
+  }
+
+  public void SetLinkRotation(int LinkID, float r_x, float r_y, float r_z)
+  {
+    Links[LinkID].r_x = r_x;
+    Links[LinkID].r_y = r_y;
+    Links[LinkID].r_z = r_z;
+  }
+
+  public void SetLinkLength(int LinkID, float length)
+  {
+    Links[LinkID].length = length;
   }
 
   public void UpdateIKTransforms(float TargetX, float TargetY, float TargetZ)

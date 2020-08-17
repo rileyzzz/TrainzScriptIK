@@ -1,4 +1,4 @@
-include "MathPlus.gs"
+include "gs.gs"
 
 class IKCoordinate
 {
@@ -15,14 +15,14 @@ static class IKMath
 {
   public define float PI_2 = 3.14159265/2.0;
 
-  float ApproxAtan(float z)
+  public float ApproxAtan(float z)
   {
       float n1 = 0.97239411;
       float n2 = -0.19194795;
       return (n1 + n2 * z * z) * z;
   }
 
-  float ApproxAtan2(float y, float x)
+  public float ApproxAtan2(float y, float x)
   {
       if (x != 0.0)
       {
@@ -75,7 +75,7 @@ static class IKMath
   }
 
   public define int SINETIMEOUT = 512;
-    float fast_sin(float in_x) {
+    public float fast_sin(float in_x) {
       float x = in_x;
       //always wrap input angle to -PI..PI
       if(x and x != 0.0)
@@ -118,7 +118,7 @@ static class IKMath
       return 0.0;
   }
 
-  float fast_cos(float x)
+  public float fast_cos(float x)
   {
     return fast_sin((Math.PI / 2.0) - x);
   }

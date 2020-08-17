@@ -1,6 +1,5 @@
 include "Orientation.gs"
 include "MeshObject.gs"
-include "MathPlus.gs"
 include "IKMath.gs"
 class IKLink
 {
@@ -55,7 +54,7 @@ class IKLink
 
     // point towards the endpoint
     float shiftAngle = IKMath.Angle(localTarget) - IKMath.Angle(endPoint);
-    r_x = r_x + shiftAngle + 0.1;
+    r_x = r_x + shiftAngle + 0.02;
 
     ApplyTransform();
 
