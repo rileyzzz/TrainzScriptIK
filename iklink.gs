@@ -14,7 +14,7 @@ class IKLink
   public void ApplyTransform()
   {
     if(r_x < -Math.PI) r_x = r_x + Math.PI * 2;
-    if(r_x > -Math.PI) r_x = r_x - Math.PI * 2;
+    if(r_x > Math.PI) r_x = r_x - Math.PI * 2;
     MainObject.SetMeshOrientation("link" + (string)ID, r_x, r_y, r_z);
   }
 
